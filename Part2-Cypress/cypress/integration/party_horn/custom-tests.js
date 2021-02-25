@@ -70,7 +70,7 @@ describe('Party Horn Tests', () => {
   });
 
 
-  it('Honk button is disabled when the textbox input is a empty or a non-number', () => {
+  it('an error is shown when you type a number outside of the given range for the volume textbox input', () => {
     cy.get('#volume-number').clear().type('1000');
     cy.get('#party-horn-form').submit().then(function() {
       cy.get('input:invalid').should('have.length', 1);
